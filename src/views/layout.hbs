@@ -6,22 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=60ded8fa-0ec4-444d-a46f-77139b2580c4&lang=ru_RU"></script>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-  <a href="/">Home</a>
- {{#if username}}
- {{username}}
-<a href="/logout">Logout </a>
- {{else}}
-
-<a href="/register">Registration</a>
-<a href="/login">Login </a>
- {{/if}}
-
-
-  {{{body}}}
+<main>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        {{#if username}}
+          <li><a href="#">{{username}}</a></li>
+          <li><a href="/logout">Logout </a></li>
+        {{else}}
+          <li><a href="/register">Registration</a></li>
+          <li><a href="/login">Login </a></li>
+        {{/if}}
+      </ul>
+    </nav>
+    {{{body}}}
+  </div>
+</main>
 </body>
 
 </html>
