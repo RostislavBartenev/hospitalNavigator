@@ -4,6 +4,10 @@ const hbs = require('hbs')
 const indexRouter = require('./src/routes/index')
 const registerRouter = require('./src/routes/register')
 const loginRouter = require('./src/routes/login')
+const mainRouter = require('./src/routes/main')
+const logoutRouter = require('./src/routes/logout')
+
+
 const checkAuthenticated = require('./middlewares/checkAuth')
 const flash = require('express-flash')
 const passport = require('passport')
@@ -27,13 +31,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use('local', new LocalStrategy((username, password, done) => {
-    User.findOne({ username: username }, (err, user) => {
-      if (err) return done(err);
-      if (!user) return done(null, false);
-      if (!user.verifyPassword(password)) return done(null, false);
-      return done(null, user);
-    });
-  })
+  User.findOne({ username: username },async  (err, user) => {
+    if (err) return done(err);
+    if (!user) return done(null, false, {message: 'Пользователь не найден'});
+    
+    if (!(await user.verifyPassword(password)))  return done(null, false, {message: 'Неверный пароль'});
+    return done(null, user);
+  });
+})
 );
 
 passport.serializeUser((user, done) => {
@@ -44,23 +49,15 @@ passport.deserializeUser((id, done) => {
   User.findById(id, (err, user) => done(err, user))
 })
 
-app.get('/', indexRouter)
-app.use('/register', registerRouter)
-app.use('/login', loginRouter)
-
-app.post('/login', passport.authenticate('local', {
+app.use('/', indexRouter)
+app.use('/register', registerRouter, passport.authenticate('local', {
   successRedirect: '/main',
-  failureRedirect: '/login',
-  failureFlash: true })
-);
+  failureRedirect: '/register',
+  failureFlash: true
+}))
 
-app.get('/main', checkAuthenticated, (req, res) => {
-  res.render('main')
-})
-
-app.get('/logout', function (req, res) {
-  req.logout();
-  res.redirect('/');
-});
+app.use('/login', loginRouter)
+app.use('/main', checkAuthenticated, mainRouter)
+app.use('/logout', logoutRouter);
 
 module.exports = app
