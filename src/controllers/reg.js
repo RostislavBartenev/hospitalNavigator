@@ -5,7 +5,7 @@ const registerGet = (req, res) =>{
   res.render('register')
 }
 
-const registerPost = async (req, res) =>{
+const registerPost = async (req, res, next) =>{
   const { username, password } = req.body
   const saltRounds = 10;
   const hashedPassword = await bcrypt.hash(password, saltRounds)
@@ -14,16 +14,14 @@ const registerPost = async (req, res) =>{
     await user.save();
   } catch (err) {
     console.log(err.message);
+    res.render('register', {err})
   }
-  res.redirect('/login')
-}
-
-const login = (req, res) =>{
-  res.render('login')
+//  res.redirect('/login')
+  next()
+  
 }
 
 module.exports = {
   registerGet,
   registerPost,
-  login
 }

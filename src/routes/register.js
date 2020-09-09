@@ -2,8 +2,8 @@ const express = require('express')
 const router = express.Router()
 const regController = require('../controllers/reg')
 
-router.get('', regController.registerGet)
-
-router.post('', regController.registerPost)
+router.route('')
+.get(regController.registerGet)
+.post(regController.registerPost)
 
 module.exports = router;
