@@ -1,12 +1,12 @@
-{{messages.error}}
+
 <form action="/login" method="post">
   <label>Username:
-    <input type="text" name="username"/>
+    <input type="text" name="username" minlength="4"/>
   </label>
   <label>Password:
-    <input type="password" name="password"/>
+    <input type="password" name="password" minlength="4"/>
   </label>
   <button type="submit">Login</button>
 </form>
 
-
+{{messages.error}}
