@@ -39,6 +39,7 @@ createRouteButton.addEventListener('click', async (event) => {
   for (let i = 0; i < inputs.length; i++) {
     data.push(inputs[i].value)
   }
+  data.push(inputs[0].value)
   console.log(data)
   init(data)
 });
