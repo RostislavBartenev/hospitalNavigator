@@ -1,5 +1,5 @@
-
-<form action="/login" method="post">
+<h1 class="title">Login</h1>
+<form class="login-form form" action="/login" method="post">
   <label>Username:
     <input type="text" name="username" minlength="4"/>
   </label>
@@ -9,4 +9,4 @@
   <button type="submit">Login</button>
 </form>
 
-{{messages.error}}
+<div class="invalid">{{messages.error}}</div>
