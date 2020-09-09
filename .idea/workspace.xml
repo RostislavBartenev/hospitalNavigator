@@ -4,10 +4,8 @@
     <list default="true" id="21464e04-2ab8-4fbf-beed-0b02c7ec9b00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/index.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/main.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/main.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +44,8 @@
       <option name="presentableId" value="Default" />
       <updated>1599576598954</updated>
       <workItem from="1599576600629" duration="499000" />
-      <workItem from="1599625737830" duration="2282000" />
+      <workItem from="1599625737830" duration="2673000" />
+      <workItem from="1599632178484" duration="6121000" />
     </task>
     <servers />
   </component>

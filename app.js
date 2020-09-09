@@ -54,7 +54,7 @@ app.post('/login', passport.authenticate('local', {
   failureFlash: true })
 );
 
-app.get('/main', checkAuthenticated, (req, res) => {
+app.get('/main', (req, res) => {
   res.render('main')
 })
 
