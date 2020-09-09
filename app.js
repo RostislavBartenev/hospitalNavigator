@@ -6,7 +6,7 @@ const registerRouter = require('./src/routes/register')
 const loginRouter = require('./src/routes/login')
 const mainRouter = require('./src/routes/main')
 const logoutRouter = require('./src/routes/logout')
-
+const userMiddleware = require('./middlewares/user')
 
 const checkAuthenticated = require('./middlewares/checkAuth')
 const flash = require('express-flash')
@@ -31,11 +31,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use('local', new LocalStrategy((username, password, done) => {
-  User.findOne({ username: username },async  (err, user) => {
+  User.findOne({ username: username }, async (err, user) => {
     if (err) return done(err);
-    if (!user) return done(null, false, {message: 'Пользователь не найден'});
-    
-    if (!(await user.verifyPassword(password)))  return done(null, false, {message: 'Неверный пароль'});
+    if (!user) return done(null, false, { message: 'Пользователь не найден' });
+
+    if (!(await user.verifyPassword(password))) return done(null, false, { message: 'Неверный пароль' });
     return done(null, user);
   });
 })
@@ -48,7 +48,7 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((id, done) => {
   User.findById(id, (err, user) => done(err, user))
 })
-
+app.use(userMiddleware);
 app.use('/', indexRouter)
 app.use('/register', registerRouter, passport.authenticate('local', {
   successRedirect: '/main',
