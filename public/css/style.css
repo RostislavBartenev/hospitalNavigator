@@ -140,12 +140,12 @@ nav ul li a {
 
 .container__form-maps {
   width: 100%;
-  height: 600px;
   display: flex;
   box-shadow: none
 }
 
 #YaMap {
   width: 100%;
+  height: 100%;
 }
 

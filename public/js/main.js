@@ -10,29 +10,9 @@ let inputsContainer = document.querySelector('.inputs_container')
 
 createRouteButton.disabled = true
 
-formRoutes.addEventListener('submit', (event) => {
+formRoutes.addEventListener('submit', async (event) => {
   event.preventDefault()
-})
 
-let apiLoaded = async () => {
-  await ymaps.ready();
-  createRouteButton.disabled = false
-}
-
-apiLoaded()
-
-addMoreButton.addEventListener('click', () => {
-  let newInput = `<div class="form-control"><input placeholder="Add address" name="address" type="text"></div>`
-  let inputs = document.getElementsByTagName('input')
-
-  if (inputs.length < 9) {
-    inputsContainer.insertAdjacentHTML('beforeend', newInput)
-  } else {
-    addMoreButton.disabled = true
-  }
-})
-
-createRouteButton.addEventListener('click', async (event) => {
   if (YaMap.children.length) YaMap.children[0].remove()
   let data = []
   let inputs = document.getElementsByTagName('input')
@@ -45,6 +25,28 @@ createRouteButton.addEventListener('click', async (event) => {
     data.push(inputs[0].value)
     init(data)
   }
+})
+
+let apiLoaded = async () => {
+  await ymaps.ready();
+  createRouteButton.disabled = false
+}
+
+apiLoaded()
+
+addMoreButton.addEventListener('click', () => {
+  let newInput = `<div class="form-control"><input placeholder="Add address" name="address" type="text" pattern=".{3,}" required title="3 characters minimum"></div>`
+  let inputs = document.getElementsByTagName('input')
+
+  if (inputs.length < 9) {
+    inputsContainer.insertAdjacentHTML('beforeend', newInput)
+  } else {
+    addMoreButton.disabled = true
+  }
+})
+
+createRouteButton.addEventListener('submit', async (event) => {
+
 });
 
 function shoufle(arr) {
