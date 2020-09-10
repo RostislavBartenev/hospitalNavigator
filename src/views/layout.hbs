@@ -11,20 +11,20 @@
 </head>
 
 <body>
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    {{#if username}}
+      <li><a href="#">{{username}}</a></li>
+      <li><a href="/logout">Logout </a></li>
+    {{else}}
+      <li><a href="/register">Registration</a></li>
+      <li><a href="/login">Login </a></li>
+    {{/if}}
+  </ul>
+</nav>
 <main>
   <div class="container">
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        {{#if username}}
-          <li><a href="#">{{username}}</a></li>
-          <li><a href="/logout">Logout </a></li>
-        {{else}}
-          <li><a href="/register">Registration</a></li>
-          <li><a href="/login">Login </a></li>
-        {{/if}}
-      </ul>
-    </nav>
     {{{body}}}
   </div>
 </main>
