@@ -22,7 +22,7 @@ let apiLoaded = async () => {
 apiLoaded()
 
 addMoreButton.addEventListener('click', () => {
-  let newInput = `<input placeholder="Add address" name="address" type="text">`
+  let newInput = `<div class="form-control"><input placeholder="Add address" name="address" type="text"></div>`
   let inputs = document.getElementsByTagName('input')
 
   if (inputs.length < 9) {

@@ -20,9 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21464e04-2ab8-4fbf-beed-0b02c7ec9b00" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/optimalPath/optimal.js" beforeDir="false" afterPath="$PROJECT_DIR$/optimalPath/optimal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/main.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/main.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/register.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/register.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,9 +95,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="181" y="92" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1599719095926" />
-    <state x="526" y="63" key="RollbackChangesDialog" timestamp="1599719097106">
+    <state x="526" y="63" key="RollbackChangesDialog" timestamp="1599724355144">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="526" y="63" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1599719097106" />
+    <state x="526" y="63" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1599724355144" />
   </component>
 </project>

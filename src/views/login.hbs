@@ -1,12 +1,17 @@
-<h1 class="title">Login</h1>
-<form class="login-form form" action="/login" method="post">
-  <label>Username:
-    <input type="text" name="username" minlength="4"/>
-  </label>
-  <label>Password:
-    <input type="password" name="password" minlength="4"/>
-  </label>
-  <button type="submit">Login</button>
-</form>
-
-<div class="invalid">{{messages.error}}</div>
+<div class="container__form">
+  <div class="header__form">
+    <h2>Login</h2>
+  </div>
+  <form id="form" class="form" action="/login" method="post">
+    <div class="form-control">
+      <label for="username">Username</label>
+      <input type="text" placeholder="Your login" name="username" minlength="4">
+    </div>
+    <div class="form-control">
+      <label for="username">Password</label>
+      <input type="password" name="password" placeholder="Your password" minlength="4">
+    </div>
+    <button type="submit">Login</button>
+    <div class="invalid">{{messages.error}}</div>
+  </form>
+</div>

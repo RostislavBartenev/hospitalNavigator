@@ -1,12 +1,18 @@
-<h1 class="title">Create Account</h1>
-<form class="registration-form form" action="/register" method="post">
-  <label> Username:
-    <input type="text" name="username" placeholder="Your login" minlength="4">
-  </label>
-  <label> Password:
-    <input type="password" name="password" placeholder="Your password" minlength="4">
-  </label>
-  <button type="submit">Register</button>
-</form>
+<div class="container__form">
+  <div class="header__form">
+    <h2>Create Account</h2>
+  </div>
+  <form id="form" class="form" action="/register" method="post">
+    <div class="form-control">
+      <label for="username">Username</label>
+      <input type="text" placeholder="Your login" name="username" minlength="4">
+    </div>
+    <div class="form-control">
+      <label for="username">Password</label>
+      <input type="password" placeholder="Your password" name="password" minlength="4">
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</div>
 
 

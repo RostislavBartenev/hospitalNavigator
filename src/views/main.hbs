@@ -1,12 +1,25 @@
 <script defer src="/js/main.js"></script>
 
-<form class="form routes-form" name="routes">
-  <div class="inputs_container">
-    <input placeholder="Enter your start location" name="center" type="text">
-    <input placeholder="Add address" name="address" type="text">
+<div class="maps">
+  <div class="container__form container__form-address">
+    <div class="header__form">
+      <h2>Create Account</h2>
+    </div>
+    <form name="routes" class="form">
+      <div class="inputs_container">
+        <div class="form-control">
+          <input placeholder="Enter your start location" name="center" type="text">
+        </div>
+        <div class="form-control">
+          <input placeholder="Add address" name="address" type="text">
+        </div>
+      </div>
+      <button name="addMore">Add More Addresses</button>
+      <button name="createRoute">Create route</button>
+    </form>
   </div>
-  <button name="addMore">Add More Addresses</button>
-  <button name="createRoute">Create route</button>
-</form>
 
-<div id="YaMap" style="width: 600px; height: 400px"></div>
+  <div class="container__form container__form-maps"><div id="YaMap"></div></div>
+</div>
+
+
