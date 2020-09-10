@@ -51,14 +51,14 @@ function shoufle(arr) {
   const result = [];
   const l = arr.length;
   for (let i = 0; i < l; i++) {
-    const temp = arr[i];
-    arr.splice(i, 1);
+    const temp = arr[0];
+    arr.splice(0, 1);
     for (let j = 1; j < l; j++) {
       arr.splice(j, 0, temp);
       result.push(JSON.parse(JSON.stringify(arr)));
+      if (j === l - 1) break;
       arr.splice(j, 1);
     }
-    arr.splice(i, 0, temp);
   }
   return result;
 }
