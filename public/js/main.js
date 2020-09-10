@@ -15,7 +15,7 @@ formRoutes.addEventListener('submit', (event) => {
 })
 
 let apiLoaded = async () => {
-  await ymaps.ready()
+  await ymaps.ready();
   createRouteButton.disabled = false
 }
 
@@ -25,7 +25,7 @@ addMoreButton.addEventListener('click', () => {
   let newInput = `<input placeholder="Add address" name="address" type="text">`
   let inputs = document.getElementsByTagName('input')
 
-  if (inputs.length < 4) {
+  if (inputs.length < 9) {
     inputsContainer.insertAdjacentHTML('beforeend', newInput)
   } else {
     addMoreButton.disabled = true
@@ -39,10 +39,57 @@ createRouteButton.addEventListener('click', async (event) => {
   for (let i = 0; i < inputs.length; i++) {
     data.push(inputs[i].value)
   }
-  data.push(inputs[0].value)
-  console.log(data)
-  init(data)
+  if (data.length > 2) {
+    await findOptimalPath(data)
+  } else {
+    data.push(inputs[0].value)
+    init(data)
+  }
 });
+
+function shoufle(arr) {
+  const result = [];
+  const l = arr.length;
+  for (let i = 0; i < l; i++) {
+    const temp = arr[i];
+    arr.splice(i, 1);
+    for (let j = 1; j < l; j++) {
+      arr.splice(j, 0, temp);
+      result.push(JSON.parse(JSON.stringify(arr)));
+      arr.splice(j, 1);
+    }
+    arr.splice(i, 0, temp);
+  }
+  return result;
+}
+
+
+let findOptimalPath = async (arr) => {
+  console.log(arr, 'arr')
+
+  let hospital = arr[0]
+
+  console.log(hospital, 'hosp')
+
+  const shoufledArr = shoufle(arr.slice(1));
+
+  console.log(shoufledArr, 'shuf')
+
+
+  const result2 = await Promise.all(shoufledArr.map(async (el) => {
+    const route = await ymaps.route([hospital,...el, hospital]);
+    const tempDist = await route.getLength();
+    const dist = Math.round(tempDist);
+    return { el, dist };
+  }));
+
+  console.log(result2.sort((a, b) => a.dist - b.dist));
+  const path = result2[0].el;
+  console.log(path);
+  console.log([hospital,...path, hospital])
+  init([hospital,...path, hospital])
+}
+
 
 function init(data) {
     /**

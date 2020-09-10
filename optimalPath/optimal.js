@@ -24,7 +24,7 @@ function shoufle(arr) {
   }
   return result;
 }
-async function wrapper(arr) {
+
   ymaps.ready(async () => {
     // тут нужно будет работать, что-то я не нашел у вас в коде где вы там карту подключили
     // но в любом случае где-то должна быть ymaps.ready или похожий обработчик
@@ -38,7 +38,7 @@ async function wrapper(arr) {
     const shoufledArr = shoufle(arr); // сюда передается этот массив
     // дальше ждем маршрут к блекджеку и шлюхам
     // const result = [];
-    let hospital = [42.941595, 71.372918]; // координаты больницы захардкодил для тестов
+    let hospital = [42.941595, 71.372918]; // координаты больницы захардкодил для тестов data[0]
     // без Promise.all работает еще быстрее, но у меня не получилось добиться стабильности
     const result2 = await Promise.all(shoufledArr.map(async (el) => {
       const route = await ymaps.route([hospital,...el,hospital]);
@@ -55,35 +55,9 @@ async function wrapper(arr) {
     // это наш самый оптимальный(ну почти) массив координат
     const path = result2[0].el;
     
-    console.log(path); 
-
-    // shoufledArr.forEach(async (el) => {
-    //   const route = await ymaps.route(el);
-    //   const tempDist = await route.getLength();
-    //   const dist = Math.round(tempDist);
-    //   // console.log(length);
-    //   await result.push([el, dist]); // await тут тоже писал мля
-    //   console.log(result, '<<<<<<<<<<<<');
-    // });
-    // console.log(result.sort((a, b) => a.dist - b.dist));
-    // console.log(result.length);
-    // console.log('>>>>>>>>>>>>>>>', result);
-    // console.log(typeof result);
-    // console.log(Array.isArray(result));
-    // console.log(result.length);
-    // let minDist = result[0].dist;
-    // let minPath = result[0].path;
-    // for (let i = 0; i < result.length; i++) {
-    // if (minDist > result[i].dist) {
-    //   minDist = result[i].dist;
-    //   minPath = result[i].path;
-    // }
-    //   console.log(result[i]);
-    // }
-    // console.log(minDist);
-    // console.log(minPath);
+    console.log(path);
   });
-}
+
 wrapper([
   [42.902243, 71.377017],
   [42.911595, 71.372918],
