@@ -22,7 +22,7 @@
     <list default="true" id="21464e04-2ab8-4fbf-beed-0b02c7ec9b00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +64,8 @@
       <workItem from="1599625737830" duration="2673000" />
       <workItem from="1599632178484" duration="6314000" />
       <workItem from="1599649019389" duration="6033000" />
+      <workItem from="1599735772933" duration="462000" />
+      <workItem from="1599736591479" duration="1332000" />
     </task>
     <servers />
   </component>
@@ -91,9 +93,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="181" y="92" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1599719095926" />
-    <state x="526" y="63" key="RollbackChangesDialog" timestamp="1599724355144">
+    <state x="526" y="63" key="RollbackChangesDialog" timestamp="1599735795338">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="526" y="63" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1599724355144" />
+    <state x="526" y="63" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1599735795338" />
   </component>
 </project>
