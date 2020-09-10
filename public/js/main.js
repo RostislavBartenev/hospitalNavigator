@@ -47,8 +47,9 @@ addMoreButton.addEventListener('click', () => {
   }
 })
 
-removeLastButton.addEventListener('click', () => {
-  let inputs = document.getElementsByTagName('input')
+removeLastButton.addEventListener('click', (event) => {
+  event.preventDefault()
+  let inputs = formRoutes.getElementsByTagName('input')
   if (inputs.length > 2) {
     inputs[inputs.length - 1].parentElement.remove()   
   }
@@ -76,16 +77,9 @@ function shoufle(arr) {
 
 
 let findOptimalPath = async (arr) => {
-  console.log(arr, 'arr')
-
   let hospital = arr[0]
 
-  console.log(hospital, 'hosp')
-
   const shoufledArr = shoufle(arr.slice(1));
-
-  console.log(shoufledArr, 'shuf')
-
 
   const result2 = await Promise.all(shoufledArr.map(async (el) => {
     const route = await ymaps.route([hospital,...el, hospital]);
@@ -94,10 +88,7 @@ let findOptimalPath = async (arr) => {
     return { el, dist };
   }));
 
-  console.log(result2.sort((a, b) => a.dist - b.dist));
   const path = result2[0].el;
-  console.log(path);
-  console.log([hospital,...path, hospital])
   init([hospital,...path, hospital])
 }
 
