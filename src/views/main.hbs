@@ -7,18 +7,23 @@
     <form name="routes" class="form">
       <div class="inputs_container">
         <div class="form-control">
-          <input placeholder="Enter your start location" name="center" type="text" pattern=".{3,}" required title="3 characters minimum">
+          <input placeholder="Enter your start location" name="center" type="text" pattern=".{3,}" required
+            title="3 characters minimum">
         </div>
         <div class="form-control">
-          <input placeholder="Add address" name="address" type="text" pattern=".{3,}" required title="3 characters minimum">
+          <input placeholder="Add address" name="address" type="text" pattern=".{3,}" required
+            title="3 characters minimum">
         </div>
       </div>
       <button name="addMore">Add More Addresses</button>
+      <button name="removeLast">Remove Last Addresses</button>
       <button type="submit" name="createRoute">Create route</button>
     </form>
   </div>
 
-  <div class="container__form container__form-maps"><div id="YaMap"></div></div>
+  <div class="container__form container__form-maps">
+    <div id="YaMap"></div>
+  </div>
 </div>
 
 

@@ -6,6 +6,8 @@ let YaMap = document.querySelector('#YaMap')
 
 let addMoreButton = formRoutes.addMore
 
+let removeLastButton = formRoutes.removeLast
+
 let inputsContainer = document.querySelector('.inputs_container')
 
 createRouteButton.disabled = true
@@ -42,6 +44,13 @@ addMoreButton.addEventListener('click', () => {
     inputsContainer.insertAdjacentHTML('beforeend', newInput)
   } else {
     addMoreButton.disabled = true
+  }
+})
+
+removeLastButton.addEventListener('click', () => {
+  let inputs = document.getElementsByTagName('input')
+  if (inputs.length > 2) {
+    inputs[inputs.length - 1].parentElement.remove()   
   }
 })
 
